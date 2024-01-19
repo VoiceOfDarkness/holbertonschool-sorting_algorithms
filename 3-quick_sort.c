@@ -24,12 +24,12 @@ void swap(int *first, int *second)
  */
 int lomuto_partition(int *arr, size_t size, ssize_t low, ssize_t high)
 {
-	ssize_t j;
+	ssize_t j, i;
 	int pivot;
 	
 	pivot = arr[high];
 
-	int i = low;
+	i = low;
 
 	for (j = low; j < high; j++)
 	{
@@ -62,7 +62,7 @@ void lomuto_scheme(int *arr, size_t size, ssize_t low, ssize_t high)
 
 	if (low < high)
 	{
-		int pivot = lomuto_partition(arr, size, low, high);
+		pivot = lomuto_partition(arr, size, low, high);
 
 		lomuto_scheme(arr, size, low, pivot - 1);
 		lomuto_scheme(arr, size, pivot + 1, high);
