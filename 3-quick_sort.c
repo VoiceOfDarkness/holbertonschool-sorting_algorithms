@@ -1,5 +1,3 @@
-
-
 #include "sort.h"
 
 /**
@@ -22,31 +20,31 @@ void swap(int *first, int *second)
  * @high: high index
  * Return: index of pivot
  */
-int lomuto_partition(int *arr, size_t size, ssize_t low, ssize_t high)
+int lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 {
-	ssize_t j, i;
+	ssize_t i, j;
 	int pivot;
-	
-	pivot = arr[high];
 
-	i = low;
-
-	for (j = low; j < high; j++)
+	pivot = array[high];
+	i = low - 1;
+	for (j = low; j < hi; j++)
 	{
-		if (arr[j] <= pivot)
+		if (array[j] < pivot)
 		{
 			i++;
 			if (i != j)
 			{
-				swap(&arr[i], &arr[j]);
-				print_array(arr, size);
+				swap(&array[i], &array[j]);
+				print_array(array, size);
 			}
 		}
 	}
-
-	swap(&arr[i], &arr[high]);
-
-	return (i);
+	if (array[high] < array[i + 1])
+	{
+		swap(&array[i + 1], &array[j]);
+		print_array(array, size);
+	}
+	return (i + 1);
 }
 
 /**
