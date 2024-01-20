@@ -27,5 +27,6 @@ void quick_sort(int *array, size_t size);
 void lomuto_scheme(int *arr, size_t size, ssize_t low, ssize_t high);
 int lomuto_partition(int *arr, size_t size, ssize_t low, ssize_t high);
 void swap(int *first, int *second);
+void selection_sort(int *array, size_t size);
 
 #endif
